@@ -1,8 +1,13 @@
 [user]
 	name = Renato Assis
 	email = renato.assis@seidor.com.br
-
 [diff]
     tool = vscode
 [difftool "vscode"]
     cmd = code --wait --diff $LOCAL $REMOTE
+[alias]
+ st = status -b --short --column
+ history = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short 
+    
+[init]
+ defaultBranch = main
