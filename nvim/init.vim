@@ -10,7 +10,7 @@ endif
 
 call plug#begin()
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
-Plug 'airblade/vim-gitgutter'                                                      
+Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -44,7 +44,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#enabled = 1
- 
+
 if exists('+termguicolors')
   let &t_7f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_7b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -52,8 +52,8 @@ if exists('+termguicolors')
 endif
 
 set hidden
-set number
-set mouse=a
+set number                                                      " set number lines
+set mouse=a                                                     " set support mouse
 set inccommand=split
 set clipboard+=unnamedplus                                      " set clipboard
 set termguicolors 						                                  " Enables 24-bit RGB color
@@ -100,8 +100,11 @@ nnoremap <c-p> :Files<cr>
 " ctrl + h
 nnoremap <c-h> :Ag<space>
 
+" list buffers
+nnoremap <silent> <leader>b :Buffers<CR>
 
-" functions 
+
+" functions
 function! GitStatus()
     let [a,m,r] = GitGutterGetHunkSummary()
     return printf('+%d ~%d -%d', a, m, r)
