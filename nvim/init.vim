@@ -10,6 +10,7 @@ endif
 
 call plug#begin()
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'airblade/vim-gitgutter'                                                      
 Plug 'terryma/vim-multiple-cursors'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -45,8 +46,8 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#enabled = 1
  
 if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  let &t_7f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_7b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
 
@@ -54,7 +55,41 @@ set hidden
 set number
 set mouse=a
 set inccommand=split
-set termguicolors
+set clipboard+=unnamedplus                                      " set clipboard
+set termguicolors 						                                  " Enables 24-bit RGB color
+set shortmess+=I 						                                    " Remove nvim intro message
+set noswapfile                                                  " avoid swap files
+set nobackup                                                    " avoid bkp files
+set nowritebackup                                               " no make a backup before overwriting file
+set undofile                                                    " persistent undo
+set undolevels=1000                                             " maximum number of changes that can be undone
+set undoreload=10000                                            " maximum number lines to save for undo on a buffer reload
+set showbreak=↪                                                 " show arrow at wrap
+set autoindent						                                     	" align the new line indent with the previous line
+set updatetime=300                                              " update quickly
+set omnifunc=syntaxcomplete#Complete                            " enable autocomplete
+set showmode                                                    " don't show pressed commands
+filetype plugin indent on                                       " recognizes filetype, plugins and indent
+set signcolumn=yes                                              " keep sign column (gutter)
+
+
+" Auto Commands
+" remove trailing whitespace on save
+autocmd! BufWritePre * :%s/\s\+$//e
+" remember cursor position
+augroup vimrc-remember-cursor-position
+  autocmd!
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+augroup END
+
+
+" fzf .gitignore
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+
+set statusline=
+set statusline+=\                                              " vim symbol
+set statusline+=\ %{GitStatus()}
+set statusline+=\ %{FugitiveStatusline()}
 
 let mapleader="\<space>"
 nnoremap <leader>; A;<esc>
@@ -62,6 +97,12 @@ nnoremap <leader>; A;<esc>
 "emulate ctrl +p
 nnoremap <c-p> :Files<cr>
 
-nnoremap <c-f> :Ag<space>
+" ctrl + h
+nnoremap <c-h> :Ag<space>
 
 
+" functions 
+function! GitStatus()
+    let [a,m,r] = GitGutterGetHunkSummary()
+    return printf('+%d ~%d -%d', a, m, r)
+endfunction
