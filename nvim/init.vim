@@ -17,8 +17,12 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
+Plug 'mateusbraga/vim-spell-pt-br'                                                 " pt-br spell checker
 Plug 'tpope/vim-fugitive'
+Plug 'ryanoasis/vim-devicons'                                                      " dev icons
+Plug 'preservim/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
 
 call plug#end()
 
@@ -71,7 +75,7 @@ set omnifunc=syntaxcomplete#Complete                            " enable autocom
 set showmode                                                    " don't show pressed commands
 filetype plugin indent on                                       " recognizes filetype, plugins and indent
 set signcolumn=yes                                              " keep sign column (gutter)
-
+au FileType markdown setl spelllang=pt_br,en spell              " spellcheck on markdown
 
 " Auto Commands
 " remove trailing whitespace on save
@@ -90,7 +94,11 @@ set statusline=
 set statusline+=\                                              " vim symbol
 set statusline+=\ %{GitStatus()}
 set statusline+=\ %{FugitiveStatusline()}
+set statusline+=\ %{FilenameStatusline()}
 
+
+
+" keymaps
 let mapleader="\<space>"
 nnoremap <leader>; A;<esc>
 
@@ -104,7 +112,26 @@ nnoremap <c-h> :Ag<space>
 nnoremap <silent> <leader>b :Buffers<CR>
 
 
+" config nerdtree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+
+let g:WebDevIconsDisableDefaultFolderSymbolColorFromNERDTreeDir = 1
+let g:WebDevIconsDisableDefaultFileSymbolColorFromNERDTreeFile = 1
+
+
 " functions
+function! FilenameStatusline()
+    let l:filetype_symbol = WebDevIconsGetFileTypeSymbol()
+    let l:filetype_name = expand('%:t')
+    return printf(' %s %s ', filetype_symbol, filetype_name)
+endfunction
+
 function! GitStatus()
     let [a,m,r] = GitGutterGetHunkSummary()
     return printf('+%d ~%d -%d', a, m, r)
