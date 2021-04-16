@@ -124,6 +124,7 @@ autocmd VimEnter * NERDTree | wincmd p
 let g:WebDevIconsDisableDefaultFolderSymbolColorFromNERDTreeDir = 1
 let g:WebDevIconsDisableDefaultFileSymbolColorFromNERDTreeFile = 1
 
+let NERDTreeIgnore=[".git", "node_modules", "dist"]
 
 " functions
 function! FilenameStatusline()
