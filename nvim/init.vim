@@ -15,14 +15,13 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sheerun/vim-polyglot'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'mateusbraga/vim-spell-pt-br'                                                 " pt-br spell checker
 Plug 'tpope/vim-fugitive'
 Plug 'ryanoasis/vim-devicons'                                                      " dev icons
 Plug 'preservim/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
