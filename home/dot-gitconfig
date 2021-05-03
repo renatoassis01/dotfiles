@@ -1,6 +1,4 @@
-[user]
-	name = Renato Assis
-	email = renato.assis@seidor.com.br
+
 
 [alias]
  st = status -b --short --column
@@ -35,4 +33,7 @@
     file-style = bold yellow ul
     file-decoration-style = none
     hunk-header-decoration-style = yellow box
+
+[include]
+  path = ~/.gitlocal
 

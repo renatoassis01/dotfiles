@@ -17,3 +17,8 @@ https://www.gnu.org/software/stow/
 ```
 ./uninstall.sh
 ```
+
+### config git user
+
+git config -f ~/.gitlocal user.email "email@yoursite.com"
+git config -f ~/.gitlocal user.name "Name Lastname"
