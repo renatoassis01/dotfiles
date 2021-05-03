@@ -1,12 +1,16 @@
+export TERM=xterm-256color
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Golang
+export GO111MODULE=auto
+export GOPATH=$HOME/workspace/go
+
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:/usr/local/go/bin:$GOPATH/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/renato/.oh-my-zsh"
@@ -16,19 +20,21 @@ plugins=(git
          docker-compose
          node
          nvm
+         command-not-found
          zsh-interactive-cd
-         zsh-syntax-highlighting 
+         zsh-syntax-highlighting
          zsh-autosuggestions)
- 
+
 source $ZSH/oh-my-zsh.sh
 
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls="exa"
+# Aliases
+if [[ -r ~/.aliasrc ]]; then
+    source ~/.aliasrc
+fi
 
-#nvm
+
+# nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
