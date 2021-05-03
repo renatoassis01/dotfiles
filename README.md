@@ -20,5 +20,8 @@ https://www.gnu.org/software/stow/
 
 ### config git user
 
+```sh
 git config -f ~/.gitlocal user.email "email@yoursite.com"
+
 git config -f ~/.gitlocal user.name "Name Lastname"
+```
