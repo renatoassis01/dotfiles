@@ -33,9 +33,9 @@ if [[ -r ~/.aliasrc ]]; then
     source ~/.aliasrc
 fi
 
-# Company aliases
-if [[ -r ~/.company-aliasrc ]]; then
-    source ~/.company-aliasrc  
+# Custom local config
+if [[ -r ~/.zshlocal ]]; then
+    source ~/.zshlocal  
 fi
 
 # nvm
