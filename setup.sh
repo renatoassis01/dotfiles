@@ -50,6 +50,9 @@ clear
 curl -s https://gist.githubusercontent.com/renatoassis01/327adfc5e80a7b3537c9918254cdf468/raw | bash 
 
 
+# workspace
+mkdir p $HOME/workspace
+
 echo -e "Install Dotfiles"
 
 # Install Dotfiles
