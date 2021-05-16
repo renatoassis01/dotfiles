@@ -1,27 +1,31 @@
-# dotfiles
+![dotfiles-logo](./assets/logo.png)
 
-My dotfiles
-
-### install stow
+### Install stow
 
 https://www.gnu.org/software/stow/
 
-### install dotfiles
+### Install dotfiles
 
 ```
 ./install.sh
 ```
 
-### uninstall dotfiles
+### Uninstall dotfiles
 
 ```
 ./uninstall.sh
 ```
 
-### config git user
+### Config git user
 
 ```sh
 git config -f ~/.gitlocal user.email "email@yoursite.com"
 
 git config -f ~/.gitlocal user.name "Name Lastname"
+```
+
+## Setup Initial
+
+```sh
+./setup.sh
 ```
