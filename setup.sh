@@ -1,12 +1,12 @@
 #! /bin/bash
 set -euo pipefail
 
-# debian likes
+# Debian likes
 if [ -x "$(command -v apt)" ]; then
    sudo apt update && sudo apt install -y zsh stow kitty unzip wget
 fi
 
-# arch likes
+# Arch likes
 if [ -x "$(command -v pacman)" ]; then 
    sudo pacman  -Syu stow 
    sudo pacman  -Syu zsh
@@ -19,38 +19,38 @@ clear
 
 echo -e "Setup oh-my-zsh"
 
-### Added oh-my-zsh
-if [[ ! -d $HOME/.oh-my-zsh ]]; then
+# Added oh-my-zsh
+if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
  git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 fi
 
-if [[ ! -d $HOME/.oh-my-zsh/custom/themes/powerlevel10k ]]; then
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k
+if [[ ! -d "$HOME/.oh-my-zsh/custom/themes/powerlevel10k" ]]; then
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$HOME/.oh-my-zsh/custom/themes/powerlevel10k"
 fi
 
-if [[ ! -d $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting  ]]; then
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting 
+if [[ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"  ]]; then
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" 
 fi
 
-if [[ ! -d $HOME/.oh-my-zsh/custom/plugins/zsh-history-substring-search ]]; then
- git clone https://github.com/zsh-users/zsh-history-substring-search $HOME/.oh-my-zsh/custom/plugins/zsh-history-substring-search
+if [[ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-history-substring-search" ]]; then
+ git clone https://github.com/zsh-users/zsh-history-substring-search "$HOME/.oh-my-zsh/custom/plugins/zsh-history-substring-search"
 fi
 
-if [[ ! -d $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]]; then
-git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+if [[ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]]; then
+git clone https://github.com/zsh-users/zsh-autosuggestions "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
 fi 
 
-if [[ ! -d $HOME/.nvm ]]; then
+if [[ ! -d "$HOME/.nvm" ]]; then
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 fi
 
 clear
 
-# Install nerd fonts
+# Install Nerd Fonts
 curl -s https://gist.githubusercontent.com/renatoassis01/327adfc5e80a7b3537c9918254cdf468/raw | bash 
 
 
-# workspace
+# Workspace
 mkdir p $HOME/workspace
 
 echo -e "Install Dotfiles"
@@ -58,17 +58,9 @@ echo -e "Install Dotfiles"
 # Install Dotfiles
 ./install.sh
 
-#Set zsh default shell user 
+# Set zsh default shell user 
 chsh -s $(which zsh)
-
 
 echo -e "You must start a new shell session"
 sleep 2
 exit 0
-
-
-
-
-
-
-
