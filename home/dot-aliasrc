@@ -7,3 +7,5 @@ alias cheat='_cheat(){ curl -s "https://cheat.sh/$1" | bat }; _cheat' # use: che
 alias get="curl -O -L" # Download file with original filename
 alias rstring='_rstring(){ openssl rand -base64 $1}; _rstring' # use: rstring 12
 alias undo-last-commit-hard="git reset HEAD~ --hard"
+alias lastmod="find . -type f -exec stat --format '%Y :%y %n' \"{}\" \; | sort -nr | cut -d: -f2-"
+
