@@ -3,7 +3,8 @@ set -euo pipefail
 
 # Debian likes
 if [ -x "$(command -v apt)" ]; then
-   sudo apt update && sudo apt install -y zsh stow kitty unzip wget
+   sudo add-apt-repository -y ppa:gnome-terminator &&
+   sudo apt update && sudo apt install -y zsh stow kitty unzip wget terminator
 fi
 
 # Arch likes
@@ -13,6 +14,7 @@ if [ -x "$(command -v pacman)" ]; then
    sudo pacman  -Syu kitty
    sudo pacman  -Syu unzip
    sudo pacman  -Syu wget
+   sudo pacman  -Syu terminator
 fi
 
 clear
