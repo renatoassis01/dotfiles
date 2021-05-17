@@ -84,7 +84,6 @@ zinit wait'0' lucid \
   atpull'%atclone' \
   run-atpull \
   atload"alias v=nvim" \
-  atload"alias v=vim" \
   light-mode for @neovim/neovim
 
 #LS_COLORS
