@@ -9,12 +9,7 @@ fi
 
 # Arch likes
 if [ -x "$(command -v pacman)" ]; then 
-   sudo pacman  -Syu stow 
-   sudo pacman  -Syu zsh
-   sudo pacman  -Syu kitty
-   sudo pacman  -Syu unzip
-   sudo pacman  -Syu wget
-   sudo pacman  -Syu terminator
+   sudo pacman  -S stow zsh kitty unzip wget terminator
 fi
 
 clear
@@ -40,6 +35,10 @@ fi
 
 if [[ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]]; then
 git clone https://github.com/zsh-users/zsh-autosuggestions "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+fi 
+
+if [[ ! -d "history-search-multi-word$HOME/.oh-my-zsh/custom/plugins/history-search-multi-word" ]]; then
+git clone https://github.com/zdharma/history-search-multi-word "$HOME/.oh-my-zsh/custom/plugins/history-search-multi-word"
 fi 
 
 # Install node version manager
