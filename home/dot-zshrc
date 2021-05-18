@@ -77,6 +77,11 @@ zinit light dandavison/delta
 zinit ice wait"2" lucid from"gh-r" as"program" mv"exa* -> exa"
 zinit light ogham/exa
 
+# procs (modern replacement for ps written in rust)
+zinit wait'1' lucid \
+  from"gh-r" as"program" \
+  light-mode for @dalance/procs
+
 # neovim
 zinit wait'0' lucid \
   id-as"nvim" from'gh-r' ver'nightly' as'program' pick'nvim*/bin/nvim' \
