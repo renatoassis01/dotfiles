@@ -50,7 +50,7 @@ zinit ice lucid wait"0" as"program" id-as"jq" from"gh-r" mv"jq-* -> jq"
 zinit light stedolan/jq
 
 # yq
-zinit ice lucid wait"0" as"program" id-as"yq" from"gh-r" mv"yq_* -> yq" 
+zinit ice lucid wait"0" as"program" id-as"yq" from"gh-r" mv"yq_* -> yq"
 zinit light mikefarah/yq
 
 # fzf
@@ -77,7 +77,7 @@ zinit light dandavison/delta
 zinit wait'1' lucid \
   from"gh-r" as"program" \
   light-mode for @dalance/procs
- 
+
 # fzf-tab
 zinit light Aloxaf/fzf-tab
 
@@ -113,7 +113,7 @@ zstyle ":completion:*:git-checkout:*" sort false
 zstyle ':completion:*:exa' file-sort modification
 zstyle ':completion:*:exa' sort false
 zstyle ":fzf-tab:*" fzf-flags --color=bg+:23
-zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+
 
 # HISTORY
 HISTSIZE=290000
