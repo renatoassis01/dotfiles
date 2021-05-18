@@ -73,14 +73,14 @@ zinit light sharkdp/bat
 zinit ice as"command" from"gh-r" mv"delta* -> delta" pick"delta/delta"
 zinit light dandavison/delta
 
-# ogham/exa, replacement for ls
-zinit ice as"program" from"gh-r" mv"exa* -> exa"
-zinit light ogham/exa
-
 # procs (modern replacement for ps written in rust)
 zinit wait'1' lucid \
   from"gh-r" as"program" \
   light-mode for @dalance/procs
+ 
+# fzf-tab
+zinit light Aloxaf/fzf-tab
+
 
 # neovim
 zinit wait'0' lucid \
@@ -97,6 +97,23 @@ zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
     atpull'%atclone' pick"clrs.zsh" nocompile'!' \
     atload'zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"'
 zinit light trapd00r/LS_COLORS
+
+# ogham/exa, replacement for ls
+zinit ice from"gh-r" as"program" mv"exa* -> exa"
+zinit load ogham/exa
+
+
+zstyle ':fzf-tab:complete:_zlua:*' query-string input
+zstyle ':fzf-tab:complete:kill:argument-rest' fzf-preview 'ps --pid=$word -o cmd --no-headers -w -w'
+zstyle ':fzf-tab:complete:kill:argument-rest' fzf-flags '--preview-window=down:3:wrap'
+zstyle ':fzf-tab:complete:kill:*' popup-pad 0 3
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:cd:*' popup-pad 30 0
+zstyle ":completion:*:git-checkout:*" sort false
+zstyle ':completion:*:exa' file-sort modification
+zstyle ':completion:*:exa' sort false
+zstyle ":fzf-tab:*" fzf-flags --color=bg+:23
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 # HISTORY
 HISTSIZE=290000
