@@ -62,7 +62,7 @@ zinit ice as"command" from"gh-r" mv"ripgrep* -> rg" pick"rg/rg"
 zinit light BurntSushi/ripgrep
 
 # sharkdp/fd
-zinit ice as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
+zinit ice as"program" from"gh-r" mv"fd* -> fd" pick"fd/fd"
 zinit light sharkdp/fd
 
 # sharkdp/bat
@@ -74,7 +74,7 @@ zinit ice as"command" from"gh-r" mv"delta* -> delta" pick"delta/delta"
 zinit light dandavison/delta
 
 # ogham/exa, replacement for ls
-zinit ice wait"2" lucid from"gh-r" as"program" mv"exa* -> exa"
+zinit ice as"program" from"gh-r" mv"exa* -> exa"
 zinit light ogham/exa
 
 # procs (modern replacement for ps written in rust)
@@ -89,6 +89,7 @@ zinit wait'0' lucid \
   atpull'%atclone' \
   run-atpull \
   atload"alias v=nvim" \
+  atload"alias vim=nvim" \
   light-mode for @neovim/neovim
 
 #LS_COLORS
