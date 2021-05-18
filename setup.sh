@@ -3,8 +3,7 @@ set -euo pipefail
 
 # Debian likes
 if [ -x "$(command -v apt)" ]; then
-   sudo add-apt-repository -y ppa:gnome-terminator &&
-   sudo apt update && sudo apt install -y zsh stow kitty unzip wget terminator
+    sudo apt update && sudo apt install -y curl zsh stow kitty unzip wget 
 fi
 
 # Arch likes
