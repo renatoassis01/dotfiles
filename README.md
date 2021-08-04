@@ -17,16 +17,6 @@
 * terminator
 * stow
 
-
-### Config git user
-
-```sh
-git config -f ~/.gitlocal user.email "email@yoursite.com"
-
-git config -f ~/.gitlocal user.name "Name Lastname"
-```
-
-
 ## Without setup initial
 ---
 
@@ -65,7 +55,3 @@ git config -f ~/.gitlocal user.email "email@yoursite.com"
 
 git config -f ~/.gitlocal user.name "Name Lastname"
 ```
-
-### Screenshot
-
-
