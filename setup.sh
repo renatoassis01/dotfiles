@@ -3,12 +3,12 @@ set -euo pipefail
 
 # Debian likes
 if [ -x "$(command -v apt)" ]; then
-    sudo apt update && sudo apt install -y curl zsh stow kitty unzip wget 
+    sudo apt update && sudo apt install -y curl zsh stow kitty unzip wget xclip
 fi
 
 # Arch likes
 if [ -x "$(command -v pacman)" ]; then 
-   sudo pacman  -S stow zsh kitty unzip wget terminator
+   sudo pacman -S stow zsh kitty unzip wget terminator xclip
 fi
 
 clear
