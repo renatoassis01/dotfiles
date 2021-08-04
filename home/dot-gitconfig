@@ -3,6 +3,7 @@
 [alias]
  st = status -b --short --column
  history = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+ clear-branch = !git branch --merged | egrep -v \"(^\\*|master|main|develop|homolog)\" | xargs git branch -d
 
 
 [init]
