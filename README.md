@@ -1,4 +1,6 @@
 ![dotfiles-logo](./assets/logo.png)
+###
+---
 
 ### Setup initial
 
@@ -17,19 +19,7 @@
 * terminator
 * stow
 
-
-### Config git user
-
-```sh
-git config -f ~/.gitlocal user.email "email@yoursite.com"
-
-git config -f ~/.gitlocal user.name "Name Lastname"
-```
-
-
 ## Without setup initial
----
-
 
 ### Install stow
 
@@ -62,10 +52,9 @@ https://www.gnu.org/software/stow/
 
 ```sh
 git config -f ~/.gitlocal user.email "email@yoursite.com"
-
-git config -f ~/.gitlocal user.name "Name Lastname"
 ```
 
-### Screenshot
-
+```sh
+git config -f ~/.gitlocal user.name "Name Lastname"
+```
 
