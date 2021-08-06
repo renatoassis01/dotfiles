@@ -3,12 +3,12 @@ set -euo pipefail
 
 # Debian likes
 if [ -x "$(command -v apt)" ]; then
-    sudo apt update && sudo apt install -y curl zsh stow kitty unzip wget xclip
+    sudo apt update && sudo apt install -y curl zsh stow kitty unzip wget xclip make
 fi
 
 # Arch likes
-if [ -x "$(command -v pacman)" ]; then 
-   sudo pacman -S stow zsh kitty unzip wget terminator xclip
+if [ -x "$(command -v pacman)" ]; then
+   sudo pacman -S stow zsh kitty unzip wget terminator xclip make
 fi
 
 clear
@@ -25,7 +25,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$HOME/.oh-my-z
 fi
 
 if [[ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"  ]]; then
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" 
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
 fi
 
 if [[ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-history-substring-search" ]]; then
@@ -34,11 +34,11 @@ fi
 
 if [[ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]]; then
 git clone https://github.com/zsh-users/zsh-autosuggestions "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
-fi 
+fi
 
 if [[ ! -d "history-search-multi-word$HOME/.oh-my-zsh/custom/plugins/history-search-multi-word" ]]; then
 git clone https://github.com/zdharma/history-search-multi-word "$HOME/.oh-my-zsh/custom/plugins/history-search-multi-word"
-fi 
+fi
 
 # Install node version manager
 if [[ ! -d "$HOME/.nvm" ]]; then
@@ -48,7 +48,7 @@ fi
 clear
 
 # Install Nerd Fonts
-curl -s https://gist.githubusercontent.com/renatoassis01/327adfc5e80a7b3537c9918254cdf468/raw | bash 
+curl -s https://gist.githubusercontent.com/renatoassis01/327adfc5e80a7b3537c9918254cdf468/raw | bash
 
 
 # Workspace
@@ -59,7 +59,7 @@ echo -e "Install Dotfiles"
 # Install Dotfiles
 ./install.sh
 
-# Set zsh default shell user 
+# Set zsh default shell user
 chsh -s $(which zsh)
 
 echo -e "You must start a new shell session"
