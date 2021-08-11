@@ -1,5 +1,11 @@
 {
-    "image": "mcr.microsoft.com/vscode/devcontainers/universal:linux",
-    "forwardPorts": [3000],
-    "postCreateCommand": "bash ./setup.sh"
+    "build": { "dockerfile": "Dockerfile" },
+    "forwardPorts": [3000, 5432],
+    "settings": {
+        "dotfiles.repository": "https://github.com/renatoassis01/dotfiles",
+        "dotfiles.targetPath": "~/dotfiles",
+        
+        
+    },
+    "postCreateCommand": "bash ~/dotfiles/setup.sh"
 }
