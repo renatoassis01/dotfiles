@@ -32,6 +32,7 @@ plugins=(git
          zsh-history-substring-search
          history-search-multi-word
          zsh-syntax-highlighting
+         colored-man-pages
          zsh-autosuggestions)
 
 # load oh-my-zsh
