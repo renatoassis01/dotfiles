@@ -1,0 +1,5 @@
+{
+    "image": "mcr.microsoft.com/vscode/devcontainers/ubuntu:latest",
+    "forwardPorts": [3000],
+    "postCreateCommand": "bash ./setup.sh"
+}
