@@ -36,7 +36,7 @@ if [[ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]]; then
 git clone https://github.com/zsh-users/zsh-autosuggestions "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
 fi
 
-if [[ ! -d "history-search-multi-word$HOME/.oh-my-zsh/custom/plugins/history-search-multi-word" ]]; then
+if [[ ! -d "$HOME/.oh-my-zsh/custom/plugins/history-search-multi-word" ]]; then
 git clone https://github.com/zdharma/history-search-multi-word "$HOME/.oh-my-zsh/custom/plugins/history-search-multi-word"
 fi
 
