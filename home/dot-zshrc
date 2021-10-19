@@ -155,3 +155,6 @@ kitty + complete setup zsh | source /dev/stdin
 
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 
+
+# Created by `pipx` on 2021-09-18 00:59:56
+export PATH="$PATH:/home/renato/.local/bin"
