@@ -15,12 +15,13 @@ function docker_deep_clean() {
 }
 
 function open-pull-request () {
-
+    
     if [ -z "$1" ]
     then
       echo "title pull request is required"
     else
-      aws codecommit create-pull-request --title "$@" --targets repositoryName=$(basename `git remote get-url origin`),sourceReference=$(git rev-parse --abbrev-ref HEAD),destinationReference=develop
+      title="${@}"
+      aws codecommit create-pull-request --title "$title" --targets repositoryName=$(basename `git remote get-url origin`),sourceReference=$(git rev-parse --abbrev-ref HEAD),destinationReference=develop
     fi
 
 }
