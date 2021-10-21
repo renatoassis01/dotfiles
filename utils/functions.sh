@@ -21,7 +21,11 @@ function open-pull-request () {
       echo "title pull request is required"
     else
       title="${@}"
-      aws codecommit create-pull-request --title "$title" --targets repositoryName=$(basename `git remote get-url origin`),sourceReference=$(git rev-parse --abbrev-ref HEAD),destinationReference=develop
+      branch=$(git rev-parse --abbrev-ref HEAD)
+      repo=$(basename `git remote get-url origin`)
+      result=$(aws codecommit create-pull-request --title "$title" --targets repositoryName="$repo",sourceReference="$branch",destinationReference=develop)
+      prid=$(echo $result | jq '.pullRequest.pullRequestId' | bc)
+      echo "https://console.aws.amazon.com/codesuite/codecommit/repositories/${repo}/pull-requests/${prid}/changes" 
     fi
 
 }
