@@ -30,6 +30,21 @@ function open-pull-request () {
 
 }
 
-
+function remove-bg-image () {
+ if [ -z "$1" ]
+  then
+      echo "path image is required"
+  else
+  filename=`basename $1`
+  result="result_$filename"
+  color=$( convert "$1" -format "%[pixel:p{0,0}]" info:- )
+  convert "$1" -alpha off -bordercolor $color -border 1 \
+    \( +clone -fuzz 30% -fill none -floodfill +0+0 $color \
+       -alpha extract -geometry 200% -blur 0x0.5 \
+       -morphology erode square:1 -geometry 50% \) \
+    -compose CopyOpacity -composite -shave 1 "result_$filename"
+    echo -e "save on $(pwd)/$result"
+    fi
+}
 
 
