@@ -3,12 +3,12 @@ set -euo pipefail
 
 # Debian likes
 if [ -x "$(command -v apt)" ]; then
-    sudo apt update && sudo apt install -y curl zsh stow kitty unzip wget xclip make postgresql-client
+    sudo apt update && sudo apt install -y curl zsh stow kitty unzip wget xclip make postgresql-client shellcheck
 fi
 
 # Arch likes
 if [ -x "$(command -v pacman)" ]; then
-   sudo pacman -S stow zsh kitty unzip wget terminator xclip make
+   sudo pacman -S stow zsh kitty unzip wget terminator xclip make shellcheck
 fi
 
 clear
