@@ -60,7 +60,7 @@ echo -e "Install Dotfiles"
 ./install.sh
 
 # Set zsh default shell user
-chsh -s "$(which zsh)"
+chsh -s "$(command -v zsh)"
 
 echo -e "You must start a new shell session"
 sleep 2
