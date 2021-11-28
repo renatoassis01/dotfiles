@@ -1,4 +1,7 @@
-source ~/dotfiles/utils/functions.sh
+# shellcheck disable=SC2148,SC2139,SC2086
+# shellcheck source=/dev/null
+
+source "$HOME/dotfiles/utils/functions.sh"
 
 alias vim="nvim"
 alias ls="exa --icons"
@@ -6,9 +9,9 @@ alias lg="lazygit"
 alias myip="curl -s https://ipinfo.io/json | jq .ip"
 alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -"
 alias clima="curl -s wttr.in/belo-horizonte"
-alias cheat='_cheat(){ curl -s "https://cheat.sh/$1" | bat }; _cheat' # use: cheat tar
+alias cheat="_cheat(){ curl -s "https://cheat.sh/$1" | bat }; _cheat" # use: cheat tar
 alias get="curl -O -L" # Download file with original filename
-alias rstring='_rstring(){ openssl rand -base64 $1}; _rstring' # use: rstring 12
+alias rstring="_rstring(){ openssl rand -base64 $1}; _rstring" # use: rstring 12
 alias lastmod="find . -type f -exec stat --format '%Y :%y %n' \"{}\" \; | sort -nr | cut -d: -f2-"
 alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
 alias clip="xclip -sel clip"

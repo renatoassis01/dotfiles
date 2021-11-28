@@ -52,7 +52,7 @@ curl -s https://gist.githubusercontent.com/renatoassis01/327adfc5e80a7b3537c9918
 
 
 # Workspace
-mkdir -p $HOME/workspace
+mkdir -p "$HOME/workspace"
 
 echo -e "Install Dotfiles"
 
@@ -60,7 +60,7 @@ echo -e "Install Dotfiles"
 ./install.sh
 
 # Set zsh default shell user
-chsh -s $(which zsh)
+chsh -s "$(which zsh)"
 
 echo -e "You must start a new shell session"
 sleep 2
