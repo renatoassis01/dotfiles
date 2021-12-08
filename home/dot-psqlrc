@@ -5,7 +5,6 @@
 -- Author : Jesus Rafael Sanchez       --
 -----------------------------------------
 
-\set QUIET ON
 -- PostgreSQL DBA psql ToolKit
 \i ~/.config/psql/dba_toolkit.pgsql
 
@@ -26,7 +25,18 @@
 -- Prompt reload
 \set prompt_reload '\\i ~/.config/psql/psql_prompt-:is_superuser.pgsql'
 
+
+
 -- Development tools:
 \set sp 'SHOW search_path;'
 \set clear '\\! clear;'
 \set ll '\\! ls -lrt;'
+
+
+
+\set QUIET 1
+\pset linestyle unicode
+\pset border 2
+\pset null <null>
+\unset QUIET
+\setenv PAGER pspg

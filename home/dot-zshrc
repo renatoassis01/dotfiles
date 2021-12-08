@@ -1,5 +1,5 @@
 export TERM=xterm-256color
-export EDITOR="vim"
+export EDITOR="nvim"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -27,6 +27,7 @@ plugins=(git
          docker-compose
          node
          nvm
+         aws
          command-not-found
          zsh-interactive-cd
          zsh-history-substring-search

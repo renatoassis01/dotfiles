@@ -17,4 +17,4 @@ alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {
 alias clip="xclip -sel clip"
 alias docker-deep-clean="docker_deep_clean"
 alias open-pull-request="open-pull-request"
-alias dk="docker ps | xargs docker kill"
+alias dstop="docker container ls -aq | xargs docker container stop"
