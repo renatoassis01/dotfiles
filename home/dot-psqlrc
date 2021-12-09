@@ -40,3 +40,4 @@
 \pset null <null>
 \unset QUIET
 \setenv PAGER pspg
+\setenv PSQL_EDITOR nvim
