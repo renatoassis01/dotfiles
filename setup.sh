@@ -37,7 +37,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions "$HOME/.oh-my-zsh/cus
 fi
 
 if [[ ! -d "$HOME/.oh-my-zsh/custom/plugins/history-search-multi-word" ]]; then
-git clone https://github.com/zdharma/history-search-multi-word "$HOME/.oh-my-zsh/custom/plugins/history-search-multi-word"
+git clone https://github.com/zdharma-continuum/history-search-multi-word "$HOME/.oh-my-zsh/custom/plugins/history-search-multi-word"
 fi
 
 # Install node version manager
