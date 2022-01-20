@@ -3,7 +3,7 @@ set -euo pipefail
 
 # Debian likes
 if [ -x "$(command -v apt)" ]; then
-    sudo apt update && sudo apt install -y curl zsh stow kitty unzip wget xclip make postgresql-client shellcheck pspg miller jq yq pv
+    sudo apt update && sudo apt install -y curl zsh stow kitty unzip wget xclip make postgresql-client shellcheck pspg miller jq pv
 fi
 
 # Arch likes
