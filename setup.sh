@@ -50,6 +50,11 @@ clear
 # Install Nerd Fonts
 curl -s https://gist.githubusercontent.com/renatoassis01/327adfc5e80a7b3537c9918254cdf468/raw | bash
 
+# ijq
+if [[ ! -x "$(command -v ijq)" ]]; then
+curl -o /tmp/x.tar.gz  https://git.sr.ht/~gpanders/ijq/refs/download/v0.3.6/ijq-0.3.6-linux-x86_64.tar.gz \
+&& tar -xvzf /tmp/x.tar.gz -C /tmp && sudo cp /tmp/ijq-0.3.6/ijq /usr/local/bin 
+fi
 
 # Workspace
 mkdir -p "$HOME/workspace"
