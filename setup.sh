@@ -3,12 +3,12 @@ set -euo pipefail
 
 # Debian likes
 if [ -x "$(command -v apt)" ]; then
-    sudo apt update && sudo apt install -y curl zsh stow kitty unzip wget xclip make postgresql-client shellcheck pspg miller jq pv
+    sudo apt update && sudo apt install -y curl zsh stow kitty unzip wget xclip make postgresql-client shellcheck pspg miller pv
 fi
 
 # Arch likes
 if [ -x "$(command -v pacman)" ]; then
-   sudo pacman -S stow zsh kitty unzip wget terminator xclip make shellcheck pspg miller jq yq pv
+   sudo pacman -S stow zsh kitty unzip wget terminator xclip make shellcheck pspg miller pv
 fi
 
 clear
@@ -52,7 +52,7 @@ curl -s https://gist.githubusercontent.com/renatoassis01/327adfc5e80a7b3537c9918
 
 # ijq
 if [[ ! -x "$(command -v ijq)" ]]; then
-curl -o /tmp/x.tar.gz  https://git.sr.ht/~gpanders/ijq/refs/download/v0.3.6/ijq-0.3.6-linux-x86_64.tar.gz \
+curl -s -o /tmp/x.tar.gz  https://git.sr.ht/~gpanders/ijq/refs/download/v0.3.6/ijq-0.3.6-linux-x86_64.tar.gz \
 && tar -xvzf /tmp/x.tar.gz -C /tmp && sudo cp /tmp/ijq-0.3.6/ijq /usr/local/bin 
 fi
 
