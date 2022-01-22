@@ -1,5 +1,7 @@
 ![dotfiles-logo](./assets/logo.png)
+
 ###
+
 ---
 
 ### Setup initial
@@ -10,14 +12,14 @@
 
 ### Configs
 
-* zsh
-* oh-my-zsh
-* powerlevel10k
-* zsh plugins
-* node version manager
-* kitty
-* terminator
-* stow
+- zsh
+- oh-my-zsh
+- powerlevel10k
+- zsh plugins
+- node version manager
+- kitty
+- terminator
+- stow
 
 ## Without setup initial
 
@@ -33,14 +35,18 @@ https://www.gnu.org/software/stow/
 
 ### Configs
 
-* zinit
-* tmux
-* lazygit
-* fd
-* exa
-* bat
-* neovim 
-
+- zinit
+- tmux
+- lazygit
+- fd
+- exa
+- bat
+- neovim
+- glow
+- dive
+- dust
+- hyperfine
+- fzf
 
 ### Uninstall dotfiles
 
@@ -57,4 +63,3 @@ git config -f ~/.gitlocal user.email "email@yoursite.com"
 ```sh
 git config -f ~/.gitlocal user.name "Name Lastname"
 ```
-

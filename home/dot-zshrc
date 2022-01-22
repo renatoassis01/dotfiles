@@ -80,6 +80,28 @@ zinit light Aloxaf/fzf-tab
 zinit ice from"gh-r" as"program" mv"docker* -> docker-compose" bpick"*linux*"
 zinit load docker/compose
 
+# render markdown
+zinit ice as"command" from"gh-r" bpick"*_linux_x86_64.tar.gz" pick"glow"
+zinit light charmbracelet/glow
+
+#bootandy/dust
+zinit ice as"command" from"gh-r" mv"dust*unknown-linux-gnu/dust -> dust" pick"dust"
+zinit light bootandy/dust
+
+#sharkdp/hyperfine
+zinit ice as"command" from"gh-r" mv"hyperfine*/hyperfine -> hyperfine" pick"sharkdp/hyperfine"
+zinit light sharkdp/hyperfine
+
+# wagoodman/dive
+zinit ice as"command" from"gh-r" bpick"*_linux_amd64.tar.gz" pick"dive"
+zinit light wagoodman/dive
+
+#ogham/exa, replacement for ls
+zinit ice as"command" from"gh-r" bpick"exa-linux-x86_64-musl-*" pick"bin/exa"
+zinit light ogham/exa
+
+
+
 
 # neovim
 zinit wait'0' lucid \
@@ -96,10 +118,6 @@ zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
     atpull'%atclone' pick"clrs.zsh" nocompile'!' \
     atload'zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"'
 zinit light trapd00r/LS_COLORS
-
-# ogham/exa, replacement for ls
-zinit ice as"command" from"gh-r" bpick"exa-linux-x86_64-musl-*" pick"bin/exa"
-zinit light ogham/exa
 
 zstyle ':fzf-tab:complete:_zlua:*' query-string input
 zstyle ':fzf-tab:complete:kill:argument-rest' fzf-preview 'ps --pid=$word -o cmd --no-headers -w -w'
@@ -155,7 +173,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 #kitty autocomplete
 kitty + complete setup zsh | source /dev/stdin
 
-POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+export POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 
 
 # Created by `pipx` on 2021-09-18 00:59:56
