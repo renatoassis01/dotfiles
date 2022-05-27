@@ -13,6 +13,16 @@ fi
 
 clear
 
+# add micro
+curl https://getmic.ro | bash
+
+
+PLUGINS=$(cat ./confg/micro/plugins.txt)
+for line in $PLUGINS
+do
+  micro -plugin install "$line"
+done
+
 echo -e "Setup oh-my-zsh"
 
 # Added oh-my-zsh
