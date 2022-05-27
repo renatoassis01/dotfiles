@@ -14,8 +14,8 @@ fi
 clear
 
 # add micro
-curl https://getmic.ro | bash
-
+curl-s https://getmic.ro | bash
+sudo mv micro /usr/bin
 
 PLUGINS="$(cat ./confg/micro/plugins.txt)"
 for line in $PLUGINS
