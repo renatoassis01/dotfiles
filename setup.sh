@@ -17,7 +17,7 @@ clear
 curl-s https://getmic.ro | bash
 sudo mv micro /usr/bin
 
-PLUGINS="$(cat ./confg/micro/plugins.txt)"
+PLUGINS="$(cat ./config/micro/plugins.txt)"
 for line in $PLUGINS
 do
   micro -plugin install "$line"
