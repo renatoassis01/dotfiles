@@ -17,7 +17,7 @@ clear
 curl https://getmic.ro | bash
 
 
-PLUGINS=$(cat ./confg/micro/plugins.txt)
+PLUGINS="$(cat ./confg/micro/plugins.txt)"
 for line in $PLUGINS
 do
   micro -plugin install "$line"
