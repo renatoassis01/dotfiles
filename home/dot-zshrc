@@ -101,8 +101,6 @@ zinit ice as"command" from"gh-r" bpick"exa-linux-x86_64-musl-*" pick"bin/exa"
 zinit light ogham/exa
 
 
-
-
 # neovim
 zinit wait'0' lucid \
   id-as"nvim" from'gh-r' ver'nightly' as'program' pick'nvim*/bin/nvim' \
@@ -176,6 +174,16 @@ kitty + complete setup zsh | source /dev/stdin
 export POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 
 
+# zoxide 
+eval "$(zoxide init zsh)"
+
+
 # Created by `pipx` on 2021-09-18 00:59:56
 export PATH="$PATH:/home/renato/.local/bin"
 ### End of Zinit's installer chunk
+
+[ -f ~/.resh/shellrc ] && source ~/.resh/shellrc # this line was added by RESH (Rich Enchanced Shell History)
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+

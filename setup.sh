@@ -23,6 +23,9 @@ do
   micro -plugin install "$line"
 done
 
+## add zoxide
+curl -sS https://webinstall.dev/zoxide | bash
+
 echo -e "Setup oh-my-zsh"
 
 # Added oh-my-zsh
