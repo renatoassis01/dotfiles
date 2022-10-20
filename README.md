@@ -57,6 +57,7 @@ https://www.gnu.org/software/stow/
 ### Config git user
 
 ```sh
+git config --global --add --bool push.autoSetupRemote true
 git config -f ~/.gitlocal user.email "email@yoursite.com"
 ```
 
