@@ -40,3 +40,5 @@
 [include]
   path = ~/.gitlocal
 
+[push]
+	autoSetupRemote = true
