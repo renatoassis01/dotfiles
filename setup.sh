@@ -3,25 +3,15 @@ set -euo pipefail
 
 # Debian likes
 if [ -x "$(command -v apt)" ]; then
-    sudo apt update && sudo apt install -y curl zsh stow kitty unzip wget xclip make postgresql-client shellcheck pspg miller pv
+    sudo apt update && sudo apt install -y curl zsh stow kitty unzip wget xclip make postgresql-client shellcheck pspg miller pv neovim
 fi
 
 # Arch likes
 if [ -x "$(command -v pacman)" ]; then
-   sudo pacman -S stow zsh kitty unzip wget terminator xclip make shellcheck pspg miller pv
+   sudo pacman -S stow zsh kitty unzip wget terminator xclip make shellcheck pspg miller pv neovim
 fi
 
 clear
-
-# add micro
-curl-s https://getmic.ro | bash
-sudo mv micro /usr/bin
-
-PLUGINS="$(cat ./config/micro/plugins.txt)"
-for line in $PLUGINS
-do
-  micro -plugin install "$line"
-done
 
 ## add zoxide
 curl -sS https://webinstall.dev/zoxide | bash
