@@ -100,17 +100,6 @@ zinit light wagoodman/dive
 zinit ice as"command" from"gh-r" bpick"exa-linux-x86_64-musl-*" pick"bin/exa"
 zinit light ogham/exa
 
-
-# neovim
-zinit wait'0' lucid \
-  id-as"nvim" from'gh-r' ver'nightly' as'program' pick'nvim*/bin/nvim' \
-  atclone'echo "" > ._zinit/is_release' \
-  atpull'%atclone' \
-  run-atpull \
-  atload"alias v=nvim" \
-  atload"alias vim=nvim" \
-  light-mode for @neovim/neovim
-
 #LS_COLORS
 zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
     atpull'%atclone' pick"clrs.zsh" nocompile'!' \
