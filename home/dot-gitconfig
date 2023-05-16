@@ -3,7 +3,7 @@
 [alias]
  st = status -b --short --column
  history = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
- clear-branch = !git branch --merged | egrep -v \"(^\\*|master|main|develop|homolog)\" | xargs git branch -d
+ cleanup = "!git fetch --all --prune;git branch --merged | egrep -v \"(^\\*|master|main|develop|homolog)\" | xargs git branch -d"
  undo-last-commit-hard = !git reset HEAD~ --hard
  undo-last-commit-soft = !git reset HEAD~ --soft
 	pushd = push -u origin HEAD

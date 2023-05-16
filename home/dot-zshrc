@@ -137,6 +137,7 @@ export GOPATH=$HOME/workspace/go
 export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:/usr/local/go/bin:$GOPATH/bin:$PATH
 
 
+
 #zinit path
 export PATH=$HOME/.zinit/plugins:$PATH
 
