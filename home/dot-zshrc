@@ -100,6 +100,9 @@ zinit light wagoodman/dive
 zinit ice as"command" from"gh-r" bpick"exa-linux-x86_64-musl-*" pick"bin/exa"
 zinit light ogham/exa
 
+#k8s tools
+
+
 #LS_COLORS
 zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
     atpull'%atclone' pick"clrs.zsh" nocompile'!' \
@@ -129,6 +132,12 @@ zstyle ":plugin:history-search-multi-word" active "underline"          # Effect 
 zstyle ":plugin:history-search-multi-word" check-paths "yes"           # Whether to check paths for existence and mark with magenta (default true)
 zstyle ":plugin:history-search-multi-word" clear-on-cancel "no"        # Whether pressing Ctrl-C or ESC should clear entered query
 
+
+# cloud tools
+# lazyload kubectl -- 'source <(kubectl completion zsh)'
+# lazyload stern -- 'source <(stern --completion=zsh)'
+# lazyload helm -- 'source <(helm completion zsh)'
+
 # Golang
 export GO111MODULE=auto
 export GOPATH=$HOME/workspace/go
@@ -137,9 +146,12 @@ export GOPATH=$HOME/workspace/go
 export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:/usr/local/go/bin:$GOPATH/bin:$PATH
 
 
-
 #zinit path
 export PATH=$HOME/.zinit/plugins:$PATH
+
+#krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
 
 # Aliases
 if [[ -r ~/.aliasrc ]]; then
@@ -168,14 +180,7 @@ export POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 eval "$(zoxide init zsh)"
 
 
-# Created by `pipx` on 2021-09-18 00:59:56
-export PATH="$PATH:/home/renato/.local/bin"
-### End of Zinit's installer chunk
 
-[ -f ~/.resh/shellrc ] && source ~/.resh/shellrc # this line was added by RESH (Rich Enchanced Shell History)
-
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 
 # Load a few important annexes, without Turbo

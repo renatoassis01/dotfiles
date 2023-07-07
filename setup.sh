@@ -59,6 +59,32 @@ curl -s -o /tmp/x.tar.gz  https://git.sr.ht/~gpanders/ijq/refs/download/v0.3.6/i
 && tar -xvzf /tmp/x.tar.gz -C /tmp && sudo cp /tmp/ijq-0.3.6/ijq /usr/local/bin 
 fi
 
+# k8s tools kubectl
+if [[ ! -x "$(command -v kubectl)" ]]; then
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+fi
+
+# k8s tools krew
+if [[ -x "$(command -v kubectl)" ]]; then
+(
+  set -x; cd "$(mktemp -d)" &&
+  OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
+  ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&
+  KREW="krew-${OS}_${ARCH}" &&
+  curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
+  tar zxvf "${KREW}.tar.gz" &&
+  ./"${KREW}" install krew
+)
+fi
+
+# k8s tools helm
+if [[ -x "$(command -v kubectl)" ]]; then
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+fi
+
+
 # Workspace
 mkdir -p "$HOME/workspace"
 
