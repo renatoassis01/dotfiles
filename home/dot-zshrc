@@ -139,8 +139,8 @@ zstyle ":plugin:history-search-multi-word" clear-on-cancel "no"        # Whether
 # lazyload helm -- 'source <(helm completion zsh)'
 
 # Golang
-export GO111MODULE=auto
-export GOPATH=$HOME/workspace/go
+export PATH=$PATH:/usr/local/go/bin
+#export $GOPATH=/home/renato/workspace/go
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:/usr/local/go/bin:$GOPATH/bin:$PATH
@@ -180,7 +180,13 @@ export POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 eval "$(zoxide init zsh)"
 
 
+#asdf
+. "$HOME/.asdf/asdf.sh"
 
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
 
 
 # Load a few important annexes, without Turbo
