@@ -1,0 +1,60 @@
+# ================================
+
+# 🚀 STARSHIP - SINGLE LINE
+
+# ================================
+
+format = "$directory $git_branch$git_status $nodejs $docker_context $kubernetes $cmd_duration $character"
+
+# --------- PROMPT ----------
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
+
+# --------- DIRETÓRIO ----------
+
+[directory]
+style = "bold cyan"
+format = "[$path]($style)"
+truncation_length = 3
+truncate_to_repo = true
+
+# --------- GIT ----------
+
+[git_branch]
+symbol = "🌱 "
+style = "bold purple"
+
+[git_status]
+style = "red"
+format = '([$all_status$ahead_behind]($style) )'
+
+# --------- NODE ----------
+
+[nodejs]
+symbol = "⬢ "
+style = "bold green"
+format = "[$symbol($version )]($style)"
+detect_files = ["package.json"]
+
+# --------- DOCKER ----------
+
+[docker_context]
+symbol = "🐳 "
+style = "blue bold"
+
+# --------- KUBERNETES ----------
+
+
+[kubernetes]
+symbol = "☸️ "
+format = '[$symbol$context( \($namespace\))]($style) '
+style = "cyan bold"
+disabled = false
+
+# --------- TEMPO ----------
+
+[cmd_duration]
+min_time = 500
+format = "⏱ [$duration](yellow)"
