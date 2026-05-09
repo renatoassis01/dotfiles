@@ -1,5 +1,8 @@
 # =========================================================
 # 🧭 PATH / BINARIES
+export PAGER="bat"
+export GIT_PAGER="delta"
+
 # =========================================================
 
 export PATH="/opt/homebrew/bin:$PATH"

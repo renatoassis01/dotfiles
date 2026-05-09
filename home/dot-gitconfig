@@ -16,9 +16,10 @@
     pager = delta
 
 [delta]
+    light = true
     features = unobtrusive-line-numbers decorations
     whitespace-error-style = 22 reverse
-    syntax-theme = OneHalfDark
+    syntax-theme = OneHalfLight
     navigate = true
 
 [delta "unobtrusive-line-numbers"]
@@ -43,3 +44,6 @@
 [push]
 	autoSetupRemote = true
 	autoSetupRemote = true
+
+[interactive]
+    diffFilter = delta --color-only --light
