@@ -27,10 +27,6 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # estilo base do fzf
 export FZF_DEFAULT_OPTS="
-  --color=fg:#c0caf5,bg:#1a1b26,hl:#7aa2f7
-  --color=fg+:#c0caf5,bg+:#283457,hl+:#7aa2f7
-  --color=info:#7dcfff,prompt:#7aa2f7,pointer:#bb9af7
-  --color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a
   --height 60%
   --layout=reverse
   --border
@@ -131,12 +127,13 @@ fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
 
 fzf-history-widget() {
   local selected
-  selected=$(fc -rl 1 | sed 's/^[ ]*[0-9]*[ ]*//' | fzf)
+  selected=$(fc -rl 1 | sed 's/^[ ]*[0-9]*[ ]*//' | fzf --no-preview)
 
   if [ -n "$selected" ]; then
     BUFFER="$selected"
     CURSOR=${#BUFFER}
   fi
+  zle reset-prompt
 }
 
 zle -N fzf-history-widget
